@@ -1,0 +1,795 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #7209b7,
+            #3a0ca3 40%,
+            #10002b
+        );
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+#musicBtn {
+
+    position: fixed;
+
+    top: 20px;
+    left: 20px;
+
+    z-index: 1000;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    background: #ff4d8d;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #ff4d8d;
+
+    transition: 0.3s;
+}
+
+
+#musicBtn:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+
+}
+
+
+.cake {
+
+    font-size: 90px;
+
+    animation:
+        bounce 2s infinite;
+
+}
+
+
+.small-title {
+
+    margin-top: 20px;
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.85;
+
+}
+
+
+.hero h1 {
+
+    margin: 15px 0;
+
+    font-size:
+        clamp(50px, 11vw, 110px);
+
+    font-family: cursive;
+
+    color: #ffb3d1;
+
+    text-shadow:
+
+        0 0 10px #ff4d8d,
+
+        0 0 30px #ff4d8d,
+
+        0 0 60px #ff4d8d;
+
+}
+
+
+.hero h2 {
+
+    font-size:
+        clamp(22px, 4vw, 35px);
+
+    margin-bottom: 20px;
+
+}
+
+
+.intro {
+
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+
+}
+
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloons {
+
+    position: absolute;
+
+    font-size: 90px;
+
+    animation:
+        floating 4s infinite ease-in-out;
+
+}
+
+
+.left {
+
+    left: 7%;
+
+    top: 25%;
+
+}
+
+
+.right {
+
+    right: 7%;
+
+    top: 35%;
+
+}
+
+
+
+/* =========================
+   SURPRISE BUTTON
+========================= */
+
+.surprise-btn {
+
+    margin-top: 35px;
+
+    padding: 16px 30px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            45deg,
+            #ff006e,
+            #ff4d8d
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 25px rgba(255, 0, 110, 0.7);
+
+    transition: 0.3s;
+
+}
+
+
+.surprise-btn:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+/* =========================
+   SURPRISE SECTION
+========================= */
+
+.surprise {
+
+    width: 90%;
+
+    max-width: 750px;
+
+    margin: 50px auto 120px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    border:
+        1px solid rgba(255,255,255,0.25);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 50px rgba(0,0,0,0.3);
+
+    display: none;
+
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition: 1s;
+
+}
+
+
+.surprise.show {
+
+    display: block;
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+.gift {
+
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.surprise h2 {
+
+    font-size: 35px;
+
+    color: #ff9ec4;
+
+    margin-bottom: 25px;
+
+}
+
+
+.surprise p {
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+
+}
+
+
+.surprise h3 {
+
+    color: #ffd6e7;
+
+}
+
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.memories {
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 100px auto;
+
+    text-align: center;
+
+}
+
+
+.memories h2 {
+
+    font-size: 40px;
+
+    color: #ff9ec4;
+
+    margin-bottom: 10px;
+
+}
+
+
+.memory-text {
+
+    margin-bottom: 40px;
+
+    opacity: 0.8;
+
+}
+
+
+.photos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.photo {
+
+    position: relative;
+
+    height: 400px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    border:
+        3px solid rgba(255,255,255,0.6);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.4);
+
+    transition: 0.5s;
+
+}
+
+
+.photo:hover {
+
+    transform:
+        translateY(-12px)
+        scale(1.02);
+
+    box-shadow:
+        0 15px 40px
+        rgba(255,77,141,0.5);
+
+}
+
+
+.photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.6s;
+
+}
+
+
+.photo:hover img {
+
+    transform: scale(1.1);
+
+}
+
+
+.photo-text {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.85)
+        );
+
+    font-size: 17px;
+
+}
+
+
+
+/* =========================
+   PERSONAL MESSAGE
+========================= */
+
+.personal {
+
+    width: 90%;
+
+    max-width: 750px;
+
+    margin: 150px auto 80px;
+
+    text-align: center;
+
+}
+
+
+.big-heart {
+
+    font-size: 70px;
+
+    animation:
+        heartbeat 1.3s infinite;
+
+}
+
+
+.personal h2 {
+
+    font-size: 38px;
+
+    color: #ff9ec4;
+
+    margin: 20px 0;
+
+}
+
+
+.personal p {
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+
+}
+
+
+.final-wish {
+
+    margin-top: 40px;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.1);
+
+    border:
+        1px solid rgba(255,255,255,0.2);
+
+}
+
+
+.final-wish h2 {
+
+    color: #ff70a6;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 30px;
+
+    opacity: 0.7;
+
+    font-size: 14px;
+
+}
+
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart-float {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    animation:
+        heartUp 5s linear forwards;
+
+}
+
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti-piece {
+
+    position: fixed;
+
+    top: -20px;
+
+    width: 10px;
+
+    height: 15px;
+
+    z-index: 10;
+
+    animation:
+        confettiFall 4s linear forwards;
+
+}
+
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+}
+
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+}
+
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+}
+
+
+@keyframes heartUp {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+    .photos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .photo {
+
+        height: 350px;
+
+    }
+
+
+    .balloons {
+
+        font-size: 60px;
+
+    }
+
+
+    .left {
+
+        left: 2%;
+
+        top: 15%;
+
+    }
+
+
+    .right {
+
+        right: 2%;
+
+        top: 20%;
+
+    }
+
+
+    .surprise {
+
+        padding:
+            35px 20px;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    #musicBtn {
+
+        top: 10px;
+
+        left: 10px;
+
+        padding:
+            10px 15px;
+
+        font-size: 13px;
+
+    }
+
+
+    .cake {
+
+        font-size: 65px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 50px;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .photo {
+
+        height: 300px;
+
+    }
+
+}
